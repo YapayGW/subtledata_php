@@ -24,7 +24,7 @@
 class TableMinimal {
 
   static $swaggerTypes = array(
-      'pos_table_id' => 'int',
+      'pos_table_id' => 'string',
       'subtledata_id' => 'int',
       'revenue_center_name' => 'string',
       'name' => 'string',
@@ -35,7 +35,7 @@ class TableMinimal {
   /**
   * Table Identifier
   */
-  public $pos_table_id; // int
+  public $pos_table_id; // string
   /**
   * Table ID
   */

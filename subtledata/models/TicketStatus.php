@@ -25,7 +25,7 @@ class TicketStatus {
 
   static $swaggerTypes = array(
       'error' => 'string',
-      'ticket_id' => 'string',
+      'ticket_id' => 'int',
       'success' => 'bool',
       'result' => 'string'
 
@@ -38,7 +38,7 @@ class TicketStatus {
   /**
   * New Ticket ID
   */
-  public $ticket_id; // string
+  public $ticket_id; // int
   /**
   * Call was successful
   */

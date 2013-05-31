@@ -24,7 +24,7 @@
 class Category {
 
   static $swaggerTypes = array(
-      'items' => 'array[Item]',
+      'items' => 'array[MenuItemDetail]',
       'has_items' => 'bool',
       'instructional_text' => 'string',
       'category_images' => 'array[CategoryImage]',
@@ -34,7 +34,7 @@ class Category {
 
     );
 
-  public $items; // array[Item]
+  public $items; // array[MenuItemDetail]
   /**
   * Category has items
   */

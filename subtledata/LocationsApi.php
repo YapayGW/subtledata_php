@@ -212,6 +212,57 @@ class LocationsApi {
 
       }
   /**
+	 * getMenuItem
+	 * Get details about a menu item
+   * location_id, int: Subtledata Location ID (required)
+   * item_id, int: Subtledata Location ID (required)
+   * api_key, string: Subtledata API Key (required)
+   * use_cache, bool: Utilize Cached Data (optional)
+   * @return MenuItem
+	 */
+
+   public function getMenuItem($location_id, $item_id, $api_key, $use_cache=null) {
+
+  		//parse inputs
+  		$resourcePath = "/locations/{location_id}/menu/items/{item_id}";
+  		$resourcePath = str_replace("{format}", "json", $resourcePath);
+  		$method = "GET";
+      $queryParams = array();
+      $headerParams = array();
+
+      if($api_key != null) {
+  		  $queryParams['api_key'] = $this->apiClient->toQueryValue($api_key);
+  		}
+  		if($use_cache != null) {
+  		  $queryParams['use_cache'] = $this->apiClient->toQueryValue($use_cache);
+  		}
+  		if($location_id != null) {
+  			$resourcePath = str_replace("{" . "location_id" . "}",
+  			                            $this->apiClient->toPathValue($location_id), $resourcePath);
+  		}
+  		if($item_id != null) {
+  			$resourcePath = str_replace("{" . "item_id" . "}",
+  			                            $this->apiClient->toPathValue($item_id), $resourcePath);
+  		}
+  		//make the API Call
+      if (! isset($body)) {
+        $body = null;
+      }
+  		$response = $this->apiClient->callAPI($resourcePath, $method,
+  		                                      $queryParams, $body,
+  		                                      $headerParams);
+
+
+      if(! $response){
+          return null;
+        }
+
+  		$responseObject = $this->apiClient->deserialize($response,
+  		                                                'MenuItem');
+  		return $responseObject;
+
+      }
+  /**
 	 * getLocationEmployees
 	 * Get a list of employees by location ID
    * location_id, int: Subtledata Location ID (required)

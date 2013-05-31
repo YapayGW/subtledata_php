@@ -26,6 +26,7 @@ class ItemToAdd {
   static $swaggerTypes = array(
       'item_id' => 'int',
       'instructions' => 'string',
+      'modifiers' => 'array[Modifier]',
       'quantity' => 'int'
 
     );
@@ -38,6 +39,7 @@ class ItemToAdd {
   * Additional Order Instructions
   */
   public $instructions; // string
+  public $modifiers; // array[Modifier]
   /**
   * Item Quantity
   */
