@@ -32,12 +32,13 @@ class MenuItem {
       'merchandise_flag' => 'bool',
       'available_for_order' => 'bool',
       'price' => 'float',
-      'description' => 'string',
+      'local_modifier_categories' => 'array[LocalModifierCategorie]',
       'UPC' => 'string',
-      'ModifierTypes' => 'array[Modifiertype]',
+      'mapped_modifier_categories' => 'array[MappedModifierCategorie]',
       'item_images' => 'array[ItemImage]',
       'cost' => 'float',
       'revenue_center_id' => 'int',
+      'description' => 'string',
       'item_id' => 'int',
       'local_pos_id' => 'int',
       'out_of_stock_flag' => 'bool'
@@ -76,15 +77,12 @@ class MenuItem {
   * Item Price
   */
   public $price; // float
-  /**
-  * Item Description
-  */
-  public $description; // string
+  public $local_modifier_categories; // array[LocalModifierCategorie]
   /**
   * Item UPC
   */
   public $UPC; // string
-  public $ModifierTypes; // array[Modifiertype]
+  public $mapped_modifier_categories; // array[MappedModifierCategorie]
   public $item_images; // array[ItemImage]
   /**
   * Item Cost Basis
@@ -94,6 +92,10 @@ class MenuItem {
   * Revenue Center ID
   */
   public $revenue_center_id; // int
+  /**
+  * Item Description
+  */
+  public $description; // string
   /**
   * Item ID
   */
