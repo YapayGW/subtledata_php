@@ -24,12 +24,17 @@
 class Modifier {
 
   static $swaggerTypes = array(
+      'sub_modifiers' => 'array[int]',
       'modifier_id' => 'int'
 
     );
 
   /**
-  * Subtledata Modifier Identifier
+  * SubModifiers of the modifier
+  */
+  public $sub_modifiers; // array[int]
+  /**
+  * Item Modifier ID
   */
   public $modifier_id; // int
   }
